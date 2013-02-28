@@ -280,6 +280,8 @@ function array_except($array, $keys)
  */
 function eloquent_to_json($models)
 {
+	if ($models === null) return null;
+	
 	if ($models instanceof Laravel\Database\Eloquent\Model)
 	{
 		return json_encode($models->to_array());
